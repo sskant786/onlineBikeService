@@ -1,3 +1,3 @@
 # onlineBikeService
 
-It is website for online bike servicing
+It is a website for online bike servicing
