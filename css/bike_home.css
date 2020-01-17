@@ -7,7 +7,15 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+.top-menu {
   background-color: #000066;
+}
+.top-menu li a:hover {
+  background-color: #004080;
+}
+.footer ul li a {
+  color: gray;
 }
 li {
   float: left;
@@ -19,9 +27,6 @@ li a {
   padding: 16px 20px;
   text-decoration: none;
 }
-li a:hover {
-  background-color: #004080;
-}
 h1 {
   text-align: center;
   margin-block-start: 0px;
@@ -30,10 +35,41 @@ h1 {
   margin-inline-end: 0px;
   font-weight: bold;
 }
+.footer span {
+  text-align: center;
+  margin: 5px;
+  color: gray;
+}
 .center-content {
   margin-left: 15%;
   margin-right: 15%;
   padding-top: 50px;
   background-color: #e6e6ff;
-
+}
+.footer-top {
+  background-color: #00264d;
+  text-align: center;
+  display: block;
+  color: #bfbfbf;
+  padding: 10px;
+}
+.footer-bottom {
+  background-color: #001a33;
+  text-align: center;
+  display: block;
+  color: #bfbfbf;
+  padding: 20px;	
+}
+.footer-contact {
+  text-align: left;
+  display: block;
+  color: #bfbfbf;
+  padding: 20px;	
+}
+.footer-contact p {
+  margin-left: 30px;
+}
+.icon-img {
+  height: 30px;
+  width: 35px;  
 }

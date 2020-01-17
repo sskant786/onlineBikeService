@@ -5,9 +5,16 @@
 <style>
 
 </style>
+<script>
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
 </head>
 <body>
-	<ul>
+	<ul class="top-menu">
 		<li><a class="active" href="#home">Home</a></li>
 		<li><a href="#appointment">Book Appointment</a></li>
 		<li><a href="#contact">Contact</a></li>
@@ -16,10 +23,52 @@
 	</ul>
 	<div class="center-content">
 		<h1>Welcome to Chetan's bike center</h1><br><br>
+		<span>Get the best service at your door step</span>
 		<img src="bike_images/plsr1.jpg">
 		<img src="bike_images/bike2.jpg">
 		<img src="bike_images/bike3.jpg">
 	</div>
-  
+	
+	<!-- footer of the page -->
+	<div class="footer">
+	  <a href="#"><div class="footer-top" onclick="topFunction()">
+		<span>Back to top</span>
+	  </div></a>
+	  <div class="footer-bottom">
+		<ul>
+		  <li>
+		    <div class="footer-contact">
+		      Contact Detail:<br>
+		      <p>Email: suryakant.sardar@gmail.com</p>
+		      <p>phone: +91 8210863905</p>
+		    </div>
+		  </li>
+		  <li>
+		    <div class="footer-contact">
+		      Address:<br>
+		      <p>Shop no: 101, Niramay Society</p>
+		      <p>Lalit estat baner-411045</p>
+		      <p>near Ganraj chock.</p>
+		    </div>
+		  </li>
+		</ul>
+		<ul>
+		  <li><a href="#home">Home</a></li>
+		  <li><a href="#appointment">Book Appointment</a></li>
+		  <li><a href="#contact">Contact</a></li>
+		  <li><a href="#about">About</a></li>
+		  <li style="float:right"><a href="#login">Sign in</a></li>
+		  <li style="float:right"><a href="#register">Sign up</a></li>
+		</ul>
+		<hr>
+		<div>
+		  Services available <h4>@Baner @Balewadi @Hinjewadi @Aundh @Pashan</h4>
+		  <br>
+		  <a style="margin: 10px" href="#feedback">Feedback</a>
+		  <a style="margin: 10px"href="#policy">Privacy policy</a>
+		  <span>© 2020-2021 All Rights Reserved, bikecenter.com</span>
+		</div>
+	  </div>
+	</div>
 </body>
 </html>
