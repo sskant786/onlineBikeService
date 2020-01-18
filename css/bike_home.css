@@ -1,5 +1,4 @@
 body {
-  
   margin: 0px;
 }
 ul {
@@ -14,11 +13,16 @@ ul {
 .top-menu li a:hover {
   background-color: #004080;
 }
-.footer ul li a {
-  color: gray;
+.footer a {
+  color: #8c8c8c;
+  text-decoration: none;
 }
 li {
   float: left;
+}
+.footer-menu li {
+  float: right;
+  position: relative;
 }
 li a {
   display: block;
@@ -58,7 +62,7 @@ h1 {
   text-align: center;
   display: block;
   color: #bfbfbf;
-  padding: 20px;	
+  padding: 10px;	
 }
 .footer-contact {
   text-align: left;
