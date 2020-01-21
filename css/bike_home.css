@@ -92,7 +92,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
-button {
+.loginbtn {
     background-color: #000066;
     color: white;
     padding: 14px 20px;
@@ -102,7 +102,7 @@ button {
     width: 90%;
 	font-size:20px;
 }
-button:hover {
+.loginbtn :hover {
     opacity: 0.8;
 }
 
