@@ -10,7 +10,7 @@
 		//echo "Connection to database is ok";
 	}else {
 		echo "Some error while connecting database.";
-		//die("error is: ".mysqli_connect_error());
+		die("error is: ".mysqli_connect_error());
 	}
 	
 ?>
