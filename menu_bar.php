@@ -40,7 +40,7 @@ function openNewWindow() {
 		<li><a href="#contact">Contact Us</a></li>
 		<li><a href="#about">About</a></li>
 		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a></li>
-		<li style="float:right"><a id="welcome" ></a></li>
+		<li style="float:right"><a id="welcome" > Welcome</a></li>
 	</ul>
 	<!-- header ends -->
 	
@@ -94,6 +94,5 @@ function openNewWindow() {
 		<?php
 		echo "<br><span style='color: green'> Customer name is $name</span>";
 	}
-	
 	?>
 </body>
