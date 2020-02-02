@@ -1,7 +1,12 @@
 <?php
-include("menu_bar.php");
-include("db_connection/connection.php");
+session_start();
 error_reporting(0);
+if($_SESSION['name'] == "") {
+include("menu_bar.php");
+}else {
+include("menu_bar_logout.php");
+}
+include("db_connection/connection.php");
 ?>
 <html>
 <head>
