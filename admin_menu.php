@@ -6,6 +6,14 @@ error_reporting(0);
    <title>Chetan's bike center</title>
    <link rel="stylesheet" type="text/css" href="css/bike_home.css">
 </head>
+<style>
+#welcome {
+	display: block;
+	color: white;
+	text-align: center;
+	padding-right: 20px;
+}
+</style>
 <body>
 <script>
 // When the user clicks on the button, scroll to the top of the document
@@ -13,20 +21,17 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
-//function to open new window
-function openNewWindow() {
-	alert("Please login to book an appointment.");
-}
 </script>
 </head>
 <body>
 	<!-- header starts -->
 	<ul class="top-menu">
-		<li><a class="active" href="index.php">Home</a></li>
+		<li><a class="active" href="#home">Home</a></li>
 		<li><a href="#" onclick="openNewWindow()">Book Appointment</a></li>
 		<li><a href="contactus.php">Contact Us</a></li>
-		<li><a href="#about">About</a></li>
-		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a></li>
+		<li><a href="profile.php">Show Profile</a></li>
+		<li style="float:right"><a href="logout.php" id="logout_lnk" onclick="logout()">Logout</a></li>
+		<li style="float:right"><p id="welcome" > Welcome <?php echo $_SESSION['name'] ?></p></li>
 	</ul>
 	<!-- header ends -->
 	
@@ -51,7 +56,7 @@ function openNewWindow() {
 	
 	<!-- verifying login from database -->
 	<?php
-	if(isset($_POST['login'])) {
+	if($_POST['login']) {
 		$username = $_POST['uname'];
 		$password = $_POST['psw'];
 		
@@ -63,28 +68,13 @@ function openNewWindow() {
 				$row = mysqli_fetch_assoc($data);
 				$name = $row['name'];
 				$customer_id = $row['id'];
-				session_start();
-				$_SESSION['name'] = $name; 
-				$_SESSION['c_id'] = $row['id']; 
-				$_SESSION['email_id'] = $row['email_id']; 
-				$_SESSION['phone_no'] = $row['phone_no']; 
-				$_SESSION['address'] = $row['address']; 
-				
-				header('location:index.php');
+				showWelcome($row['name']);
 			}else{
 				echo "<br><span style='color: red'> Failed to insert data into database</span>";
 				echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
 			}		
 		}else 
 			echo "<span style='color: red'>All fields are mandatory.</span>";
-	}
-	function showWelcome($name) { ?>
-		<script>
-		  document.getElementById('welcome').innerHTML = "Welcome "+<?php echo $name ?>;
-		  document.getElementById('login_lnk').innerHTML = "Logout";
-		</script>
-		<?php
-		echo "<br><span style='color: green'> Customer name is $name</span>";
 	}
 	?>
 </body>

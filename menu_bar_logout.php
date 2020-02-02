@@ -11,7 +11,6 @@ error_reporting(0);
 	display: block;
 	color: white;
 	text-align: center;
-	padding-top: 15px;
 	padding-right: 20px;
 }
 </style>
@@ -41,13 +40,13 @@ function openNewWindow() {
 }
 </script>
 </head>
-<body>
+<body>	
 	<!-- header starts -->
 	<ul class="top-menu">
-		<li><a class="active" href="#home">Home</a></li>
+		<li><a class="active" href="index.php">Home</a></li>
 		<li><a href="#" onclick="openNewWindow()">Book Appointment</a></li>
-		<li><a href="#contact">Contact Us</a></li>
-		<li><a href="#about">About</a></li>
+		<li><a href="contactus.php">Contact Us</a></li>
+		<li><a href="profile.php">Show Profile</a></li>
 		<li style="float:right"><a href="logout.php" id="logout_lnk" onclick="logout()">Logout</a></li>
 		<li style="float:right"><p id="welcome" > Welcome <?php echo $_SESSION['name'] ?></p></li>
 	</ul>
@@ -72,32 +71,4 @@ function openNewWindow() {
 	</div>
 	<!-- login form end-->
 	
-	<!-- verifying login from database -->
-	<?php
-	$customer_id = "";
-	if($_POST['login']) {
-		$username = $_POST['uname'];
-		$password = $_POST['psw'];
-		
-		if($username != "" && $password != ""){
-			$query = "SELECT * FROM customer WHERE email_id = '$username' AND PASSWORD = '$password'";
-			$data = mysqli_query($conn, $query);
-			
-			if($data){
-				$row = mysqli_fetch_assoc($data);
-				$name = $row['name'];
-				$customer_id = $row['id'];
-				showWelcome($row['name']);
-			}else{
-				echo "<br><span style='color: red'> Failed to insert data into database</span>";
-				echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
-			}		
-		}else 
-			echo "<span style='color: red'>All fields are mandatory.</span>";
-	}
-	function logout() { 
-		echo "Going to logout";
-		session_unset();
-	}
-	?>
 </body>

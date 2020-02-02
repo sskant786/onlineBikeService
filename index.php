@@ -20,6 +20,13 @@ include("db_connection/connection.php");
     width: 70%;
     margin: auto;
   }
+#welcome {
+	display: block;
+	color: white;
+	text-align: center;
+	padding-top: 16px;
+	padding-right: 20px;
+}
 </style>
 <script>
 // js code for image carousel

@@ -1,5 +1,11 @@
 <?php
-include('menu_bar.php'); 
+session_start();
+error_reporting(0);
+if($_SESSION['name'] == "") {
+  include("menu_bar.php");
+}else {
+  include("menu_bar_logout.php");
+}
  ?>
  <html>
  <head>
