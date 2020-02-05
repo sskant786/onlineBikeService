@@ -45,8 +45,9 @@ function openNewWindow() {
 	<ul class="top-menu">
 		<li><a class="active" href="index.php">Home</a></li>
 		<li><a href="#" onclick="openNewWindow()">Book Appointment</a></li>
-		<li><a href="contactus.php">Contact Us</a></li>
 		<li><a href="profile.php">Show Profile</a></li>
+		<li><a href="user_orders.php">Orders</a></li>
+		<li><a href="contactus.php">Contact Us</a></li>
 		<li style="float:right"><a href="logout.php" id="logout_lnk" onclick="logout()">Logout</a></li>
 		<li style="float:right"><p id="welcome" > Welcome <?php echo $_SESSION['name'] ?></p></li>
 	</ul>
@@ -59,6 +60,7 @@ function openNewWindow() {
 		  <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
 		  <img src="images/login.png" alt="Avatar" class="avatar">
 		</div>
+		
 		<div class="my-container">
 		  <input type="text" placeholder="Enter Username" name="uname" required>
 		  <input type="password" placeholder="Enter Password" name="psw" required>        

@@ -76,7 +76,7 @@ hr {
   <div class="container signin">
     <p>Already have an account? <a href="index.php">Sign in</a>.</p>
 <?php 
-if($_POST['submit'])
+if(isset($_POST['submit']))
 {
 	$id = "CUST".mt_rand();
 	$name = $_POST['name'];
