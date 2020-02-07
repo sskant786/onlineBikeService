@@ -27,6 +27,7 @@ function openNewWindow() {
 		<li><a href="contactus.php">Contact Us</a></li>
 		<li><a href="#about">About</a></li>
 		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a></li>
+		<li style="float:right"><a href="register.php">Sign Up</a></li>
 	</ul>
 	<!-- header ends -->
 	

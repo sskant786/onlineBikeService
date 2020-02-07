@@ -46,6 +46,31 @@ hr {
 <body>
 <form action="#" method="post">
   <div class="container">
+  <?php 
+if(isset($_POST['submit']))
+{
+	$id = "CUST".mt_rand();
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$password = $_POST['psw'];
+	$phone_no = $_POST['number'];
+	$address = $_POST['Address'];
+	
+	if($id != "" && $name != "" && $email != "" && $password != "" && $phone_no !="" && $address !=""){
+		$query = "INSERT into customer(id, name, email_id, password, phone_no, address) values('$id', '$name', '$email','$password', '$phone_no', '$address')";
+		$isInserted = mysqli_query($conn, $query);
+		
+		if($isInserted){
+			echo "<br><h2 style='color: green; text-align: center'> Registeration completed successfully.</h2>";
+		}else{
+			echo "<br><span style='color: red'> Failed to insert data into database</span>";
+			echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
+		}
+		
+	}else 
+		echo "<span style='color: red'>All fields are mandatory.</span>";
+}
+?>
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
@@ -75,31 +100,6 @@ hr {
   
   <div class="container signin">
     <p>Already have an account? <a href="index.php">Sign in</a>.</p>
-<?php 
-if(isset($_POST['submit']))
-{
-	$id = "CUST".mt_rand();
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$password = $_POST['psw'];
-	$phone_no = $_POST['number'];
-	$address = $_POST['Address'];
-	
-	if($id != "" && $name != "" && $email != "" && $password != "" && $phone_no !="" && $address !=""){
-		$query = "INSERT into customer(id, name, email_id, password, phone_no, address) values('$id', '$name', '$email','$password', '$phone_no', '$address')";
-		$isInserted = mysqli_query($conn, $query);
-		
-		if($isInserted){
-			echo "<br><span style='color: green'> Registeration completed successfully.</span>";
-		}else{
-			echo "<br><span style='color: red'> Failed to insert data into database</span>";
-			echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
-		}
-		
-	}else 
-		echo "<span style='color: red'>All fields are mandatory.</span>";
-}
-?>
   </div>
 </form>
 </body>
