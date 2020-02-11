@@ -1,5 +1,13 @@
 <?php
-include("db_connection/connection.php")
+include("db_connection/connection.php");
+function isRegistered($emailId, $conn) {
+	$query = "SELECT id FROM customer WHERE email_id = '$emailId'";
+	$result = mysqli_query($conn, $query);
+	
+	if(mysqli_num_rows($result) > 0)
+		return true;
+	else return false;
+}
 ?>
 <html>
 <head>
@@ -57,14 +65,18 @@ if(isset($_POST['submit']))
 	$address = $_POST['Address'];
 	
 	if($id != "" && $name != "" && $email != "" && $password != "" && $phone_no !="" && $address !=""){
-		$query = "INSERT into customer(id, name, email_id, password, phone_no, address) values('$id', '$name', '$email','$password', '$phone_no', '$address')";
-		$isInserted = mysqli_query($conn, $query);
-		
-		if($isInserted){
-			echo "<br><h2 style='color: green; text-align: center'> Registeration completed successfully.</h2>";
-		}else{
-			echo "<br><span style='color: red'> Failed to insert data into database</span>";
-			echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
+		if(isRegistered($email, $conn)) {
+			echo "<br><h2 style='color: blue'> Already registered with emailId <i>$email</i></h2>";
+		}else {
+			$query = "INSERT into customer(id, name, email_id, password, phone_no, address) values('$id', '$name', '$email','$password', '$phone_no', '$address')";
+			$isInserted = mysqli_query($conn, $query);
+			
+			if($isInserted){
+				echo "<br><h2 style='color: green; text-align: center'> Registeration completed successfully.</h2>";
+			}else{
+				echo "<br><span style='color: red'> Failed to insert data into database</span>";
+				echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
+			}
 		}
 		
 	}else 
