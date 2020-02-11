@@ -52,5 +52,6 @@ th {
 	  </table>
 	 <br><br><br>
     </div>	
+	<?php include('footer.html'); ?>
   </body>
 <html>
