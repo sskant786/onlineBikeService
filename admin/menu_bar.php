@@ -26,7 +26,7 @@ function topFunction() {
 <body "document.getElementById('modal-wrapper').style.display='block'">	
 	<!-- header starts -->
 	<ul class="top-menu">
-		<li><a class="active" href="index.php">Home</a></li>
+		<li><a class="active" href="dashboard.php">Home</a></li>
 		<li><a href="new_orders.php">New Orders</a></li>
 		<li><a href="update_orders.php">Update Order Status</a></li>
 		<li><a href="all_orders.php">All Orders</a></li>
