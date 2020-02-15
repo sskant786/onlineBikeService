@@ -28,7 +28,7 @@ function topFunction() {
 	<ul class="top-menu">
 		<li><a class="active" href="index.php">Home</a></li>
 		<li><a href="new_orders.php">New Orders</a></li>
-		<li><a href="update_status.php">Update Order Status</a></li>
+		<li><a href="update_orders.php">Update Order Status</a></li>
 		<li><a href="all_orders.php">All Orders</a></li>
 		<li style="float:right"><a href="logout.php" id="logout_lnk">Logout</a></li>
 		<li style="float:right"><p id="welcome" > Welcome <?php echo $_SESSION['user_id'] ?></p></li>
