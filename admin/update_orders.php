@@ -44,13 +44,15 @@ th {
 	  	</tr>
 	  	<?php
 	  	while($row = mysqli_fetch_assoc($data)){
+			$oId = $row['order_id'];
 	  	echo "<tr>
-	  		<td>".$row['order_id']."</td>
+	  		<td>".$oId."</td>
 	  		<td>".$row['customer_id']."</td>
 	  		<td>".$row['type']."</td>
 	  		<td>".$row['status']."</td>
 	  		<td>".$row['discription']."</td>    
 	  		<td> 
+			<form action='updateStatus.php' method='GET'>
 			 <select id='order_type' name='order_type' required>
 				<option > -- Select order status -- </option>
 				<option value='NEW'>NEW</option>
@@ -58,7 +60,9 @@ th {
 				<option value='Postponded'>Postponded</option>
 				<option value='Completed'>Completed</option>
 			 </select>
-			 <a href='updateStatus.php?order_id=CUST281041578&new_status=InProgress'>Update</a>
+			 <input type='hidden' name='orderId' value='$oId'>
+			 <input type='submit' name='update' value='Update'>
+			</form> 
 			</td>
 	  	   </tr>";
 	  	}

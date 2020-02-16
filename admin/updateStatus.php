@@ -1,8 +1,9 @@
 <?php
 include('../db_connection/connection.php');
-$oid = $_GET['order_id'];
-$status = $_GET['new_status'];
-$query = "update orders set status = 'Completed' where order_id = 'CUST281041578'";
+$oid = $_GET['orderId'];
+$status = $_GET['order_type'];
+$query = "update orders set status = '$status' where order_id = '$oid'";
+echo $query;
 
 $isUpdated = mysqli_query($conn, $query);
 if($isUpdated)
