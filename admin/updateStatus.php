@@ -6,8 +6,10 @@ $query = "update orders set status = '$status' where order_id = '$oid'";
 echo $query;
 
 $isUpdated = mysqli_query($conn, $query);
-if($isUpdated)
+if($isUpdated){
 	echo "order updated successfully";
- else
+	header('location:update_orders.php');
+}
+else
 	 echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
 ?>

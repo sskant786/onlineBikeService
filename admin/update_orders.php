@@ -1,13 +1,12 @@
 <?php
 session_start();
 error_reporting(0);
-//if($_SESSION['name'] == "") {
-//header('location:index.html');
-//}else {
-include("menu_bar.php");
-//}
+if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
+	header('location:index.php');
+}else {
+	include("menu_bar.php");
+}
 include('../db_connection/connection.php');
-//$customer_id = $_SESSION['c_id'];
 $query = "SELECT * FROM orders";
 $data = mysqli_query($conn, $query);
 ?>
@@ -54,7 +53,7 @@ th {
 	  		<td> 
 			<form action='updateStatus.php' method='GET'>
 			 <select id='order_type' name='order_type' required>
-				<option > -- Select order status -- </option>
+				<option value=''> -- Select order status -- </option>
 				<option value='NEW'>NEW</option>
 				<option value='In Progress'>In Progress</option>
 				<option value='Postponded'>Postponded</option>

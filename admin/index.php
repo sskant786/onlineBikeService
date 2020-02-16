@@ -2,9 +2,9 @@
 session_start();
 error_reporting(0);
 if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
-	header('location:index.html');
+	//header('location:index.php');
 }else {
-	include("menu_bar.php");
+	header('location:dashboard.php');
 }
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,12 @@ if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
 					<div class="container-login100-form-btn">
 						<input class="login100-form-btn" type="submit" name="login_admin" value="Login">
 					</div>
-
+					<br>
+					<?php
+					if(!$_SESSION['msg'] == ""){
+						echo "<span style='color: red'> Username or Password is wrong.</span>";
+					}
+					?>
 					<div class="text-center p-t-90">
 						<a class="txt1" href="#">
 							Forgot Password?

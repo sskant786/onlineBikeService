@@ -1,11 +1,10 @@
 <?php
 session_start();
 error_reporting(0);
-if($_SESSION['user_id'] == "") {
-include("menu_bar.php");
+if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
+	header('location:index.php');
 }else {
-	echo "Logged in successful, username: ".$_SESSION['user_id'];
-//include("menu_bar_logout.php");
+	include("menu_bar.php");
 }
 ?>
 <html>
