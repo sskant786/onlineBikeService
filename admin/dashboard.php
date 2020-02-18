@@ -18,14 +18,16 @@ if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
 	border-radius: 25px;
 	box-shadow:10px 10px 10px #888888;
 	border: 1px solid #336699;
+	transition: width 1s, height 1s, transform 1s;
   }
   .icon-container {
 	padding-left: 100px;
 	padding-right: 100px;
 	padding-bottom: 100px;
   }
-  .icon-container li:hover {
-	opacity: 0.6;
+  .dashboard-icon:hover {
+	height:250px;
+	width: 250px;
   }
   
 </style>
