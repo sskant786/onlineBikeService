@@ -18,6 +18,30 @@ function openNewWindow() {
 	alert("Please login to book an appointment.");
 }
 </script>
+<style>
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+</style>
 </head>
 <body>
 	<!-- header starts -->
@@ -25,6 +49,13 @@ function openNewWindow() {
 		<li><a class="active" href="index.php">Home</a></li>
 		<li><a href="#" onclick="openNewWindow()">Book Appointment</a></li>
 		<li><a href="contactus.php">Contact Us</a></li>
+		<div class="dropdown">
+		<li style="float:right"><a href="#">Login</a></li>
+		</div>
+		<div class="dropdown-content">
+			<a href="#">AS User</a>
+			<a href="#">As Admin</a>
+		</div>
 		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a></li>
 		<li style="float:right"><a href="register.php">Sign Up</a></li>
 	</ul>
