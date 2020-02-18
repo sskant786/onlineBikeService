@@ -85,11 +85,12 @@ function openNewWindow() {
 			$query = "SELECT * FROM customer WHERE email_id = '$username' AND PASSWORD = '$password'";
 			$data = mysqli_query($conn, $query);
 			
-			if($data){
+			if(mysqli_num_rows($data) > 0) {
 				$row = mysqli_fetch_assoc($data);
 				$name = $row['name'];
-				$customer_id = $row['id'];
+				
 				session_start();
+				$_SESSION['err_msg'] = "";
 				$_SESSION['name'] = $name; 
 				$_SESSION['c_id'] = $row['id']; 
 				$_SESSION['email_id'] = $row['email_id']; 
@@ -98,8 +99,12 @@ function openNewWindow() {
 				
 				header('location:index.php');
 			}else{
-				echo "<br><span style='color: red'> Failed to insert data into database</span>";
-				echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
+				echo "<br><span style='color: red'> Invalid Username or Password</span>";
+                echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
+ 
+                session_start();
+                $_SESSION['err_msg'] = "Invalid Username or Password";
+                header('location:index.php');
 			}		
 		}else 
 			echo "<span style='color: red'>All fields are mandatory.</span>";
