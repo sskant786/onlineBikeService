@@ -16,6 +16,8 @@ if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
 	width: 200px;
 	background-color: #0059b3;
 	border-radius: 25px;
+	box-shadow:10px 10px 10px #888888;
+	border: 1px solid #336699;
   }
   .icon-container {
 	padding-left: 100px;
@@ -23,8 +25,9 @@ if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
 	padding-bottom: 100px;
   }
   .icon-container li:hover {
-	opacity: 0.8;
+	opacity: 0.6;
   }
+  
 </style>
 </head>
 <body>
