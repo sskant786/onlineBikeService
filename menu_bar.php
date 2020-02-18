@@ -50,13 +50,8 @@ function openNewWindow() {
 		<li><a href="#" onclick="openNewWindow()">Book Appointment</a></li>
 		<li><a href="contactus.php">Contact Us</a></li>
 		<div class="dropdown">
-		<li style="float:right"><a href="#">Login</a></li>
-		</div>
-		<div class="dropdown-content">
-			<a href="#">AS User</a>
-			<a href="#">As Admin</a>
-		</div>
-		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a></li>
+		<li style="float:right"><a href="admin/">Admin Login</a></li>
+		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">User Login</a></li>
 		<li style="float:right"><a href="register.php">Sign Up</a></li>
 	</ul>
 	<!-- header ends -->

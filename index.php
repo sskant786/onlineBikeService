@@ -63,6 +63,11 @@ $(document).ready(function(){
 	<!-- body starts from here -->
 	<div class="center-content">
 		<h1>Welcome to Chetan's bike center</h1><br><br>
+		<?php 
+		if(!$_SESSION['err_msg'] == "") {
+		  echo "<h4 style='color:red; text-align: center;'>".$_SESSION['err_msg']."</h4>";
+		}
+		?>
 		<span>Get the best service at your door step</span>
 		
 		<!-- Image animation -->
