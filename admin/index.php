@@ -30,6 +30,7 @@ if($_SESSION['user_id'] == "" || $_SESSION['user_id'] == null) {
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100">
+			    <a href="../"><img src="images/icons/back_btn.png" height="60px" width="60px"></a>
 				<form class="login100-form validate-form" action="login.php" method="POST">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
