@@ -15,6 +15,15 @@ if($_SESSION['name'] == "") {
   display: block;
   padding: 20px;	
 }
+.services {
+  border-radius: 25px;
+  box-shadow:10px 10px 10px #888888;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: #b3cce6;
+  transform: rotate(8deg);
+  transition: width 2s, height 2s, transform 2s;
+}
 .contactus-detail p {
   margin-left: 30px;
   font-weight: bold;
@@ -29,21 +38,29 @@ if($_SESSION['name'] == "") {
 	font-size: 18px;
 	color: #999900;
 }
+.services:hover {
+  transform: rotate(360deg);
+}
  </style>
  </head>
 <body>
 	
 	<!-- body starts from here -->
 	<div class="center-content">
-		<h1>Get the best service at your door step.</h1><br><br>
-		<span margin=10px> You can book an order/appointment to get your work done and keep tracking your order/appointment status. We guarantee 100% customer satisfaction.</span>
+		<h1 style="color: #a64dff">Get the best service at your door step.</h1><br><br>
+		<marquee direction="left" >
+			<span style="margin:10px; font-size: 20px; color: #558000"> You can book an order/appointment to get your work done and keep tracking your order/appointment status. <span style="color: #ff99bb; font-weight: bold">We guarantee 100% customer satisfaction.</span></span>
+		</marquee>
 		<div class="center-list">
+		<br>
+		<div class="services">
 		<h2>Services we provide</h2>
 			<p>Complete Servicing</p>
 			<p>Repair any kind of damage</p>
 			<p>Repair any leackage</p>
 			<p>Washing /Cleaning</p>
 			<p>Modification of bike/scooty</p>
+		</div>
 		</div>
 		<div class="contactus-detail">
 			<h3> Address</h3>

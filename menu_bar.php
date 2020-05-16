@@ -18,6 +18,30 @@ function openNewWindow() {
 	alert("Please login to book an appointment.");
 }
 </script>
+<style>
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+</style>
 </head>
 <body>
 	<!-- header starts -->
@@ -25,8 +49,9 @@ function openNewWindow() {
 		<li><a class="active" href="index.php">Home</a></li>
 		<li><a href="#" onclick="openNewWindow()">Book Appointment</a></li>
 		<li><a href="contactus.php">Contact Us</a></li>
-		<li><a href="#about">About</a></li>
-		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">Login</a></li>
+		<div class="dropdown">
+		<li style="float:right"><a href="admin/">Admin Login</a></li>
+		<li style="float:right"><a href="#login" id="login_lnk" onclick="document.getElementById('modal-wrapper').style.display='block'">User Login</a></li>
 		<li style="float:right"><a href="register.php">Sign Up</a></li>
 	</ul>
 	<!-- header ends -->
@@ -60,11 +85,12 @@ function openNewWindow() {
 			$query = "SELECT * FROM customer WHERE email_id = '$username' AND PASSWORD = '$password'";
 			$data = mysqli_query($conn, $query);
 			
-			if($data){
+			if(mysqli_num_rows($data) > 0) {
 				$row = mysqli_fetch_assoc($data);
 				$name = $row['name'];
-				$customer_id = $row['id'];
+				
 				session_start();
+				$_SESSION['err_msg'] = "";
 				$_SESSION['name'] = $name; 
 				$_SESSION['c_id'] = $row['id']; 
 				$_SESSION['email_id'] = $row['email_id']; 
@@ -73,8 +99,12 @@ function openNewWindow() {
 				
 				header('location:index.php');
 			}else{
-				echo "<br><span style='color: red'> Failed to insert data into database</span>";
-				echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
+				echo "<br><span style='color: red'> Invalid Username or Password</span>";
+                echo "<br><span style='color: red'> Error is: ".mysqli_error($conn)."</span>";
+ 
+                session_start();
+                $_SESSION['err_msg'] = "Invalid Username or Password";
+                header('location:index.php');
 			}		
 		}else 
 			echo "<span style='color: red'>All fields are mandatory.</span>";
