@@ -64,12 +64,12 @@ if($_SESSION['name'] == "") {
 		</div>
 		<div class="contactus-detail">
 			<h3> Address</h3>
-			<p>Shop no: 101, Niramay Society</p>
-			<p>Lalit estat baner-411045</p>
-			<p>near Ganraj chock.</p>
+			<p> Bike Service Center, Niramay Society</p>
+		    <p> Lalite estate baner, pune - 411045</p>
+		    <p> near Ganraj chowk</p>
 			<h3> Contact Detail</h3>
-			<p>Email: dholi.chetan123@gmail.com</p>
-			<p>phone: +91 8210863905 </p>
+			<p>Email: online.bike.service1@gmail.com</p>
+			<p>Phone: +91 9511979705</p>
 		</div>
 		  
 	</div>

@@ -3,7 +3,7 @@ include("db_connection/connection.php");
 error_reporting(0);
 ?>
 <head>
-   <title>Chetan's bike center</title>
+   <title>Online Bike Service</title>
    <link rel="stylesheet" type="text/css" href="css/bike_home.css">
 </head>
 <style>

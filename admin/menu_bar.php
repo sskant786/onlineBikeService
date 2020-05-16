@@ -4,6 +4,7 @@ session_start();
 error_reporting(0);
 ?>
 <head>
+   <title>Online Bike Service</title>
    <link rel="stylesheet" type="text/css" href="../css/bike_home.css">
 </head>
 <style>

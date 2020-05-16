@@ -91,21 +91,21 @@ $(document).ready(function(){
 			  </div>
 		
 			  <div class="item">
-			  	<img src="bike_images/bike1.jpg" alt="Chania" width="400" height="345">
+			  	<img src="bike_images/reparing1.jpg" alt="Chania" width="400" height="345">
 			  	<div class="carousel-caption">
 			  	  
 			  	</div>
 			  </div>
 			  
 			  <div class="item">
-			  	<img src="bike_images/bike2.jpg" alt="Flower" width="400" height="345">
+			  	<img src="bike_images/reparing2.jpg" alt="Flower" width="400" height="345">
 			  	<div class="carousel-caption">
 			  	  
 			  	</div>
 			  </div>
 			  
 			  <div class="item">
-			  	<img src="bike_images/bike3.jpg" alt="Flower" width="400" height="345">
+			  	<img src="bike_images/washing.jpg" alt="Flower" width="400" height="345">
 			  	<div class="carousel-caption">
 			  	  
 			  	</div>
@@ -114,7 +114,7 @@ $(document).ready(function(){
 			  <div class="item">
 			  	<img src="bike_images/bike4.jpg" alt="Chania" width="400" height="345">
 			  	<div class="carousel-caption">
-			  	  
+  
 			  	</div>
 			  </div>
 			</div>
