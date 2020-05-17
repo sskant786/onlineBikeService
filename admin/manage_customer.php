@@ -35,7 +35,6 @@ th {
 	  <h2 style="color:green; text-align: center">Update Orders </h2>
 	  <table align="center">
 	  	<tr>
-	  	  <th>Order Id</th>
 	  	  <th>Customer Id</th>
 	  	  <th>Type</th>
 	  	  <th>Status</th>
